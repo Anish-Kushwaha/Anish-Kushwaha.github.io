@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official Portfolio of Anish Kushwaha — Engineer, Student, Cosmologist, Ethical Hacker, PenTester, Creator of Future Realities.">
+  <title>ANISH - KUSHWAHA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #e3f2fd, #f3e5f5, #ede7f6);
+      --text: #1a1a1a;
+      --accent: #4c00ff;
+      --border: rgba(0, 0, 0, 0.1);
+      --card-bg: rgba(255, 255, 255, 0.8);
+      --hover-bg: rgba(240, 240, 255, 0.8);
+      --secondary: #555;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] {
+      --bg: radial-gradient(circle at 20% 20%, #0a051a, #1a0b3b, #000428);
+      --text: #e3e8f1;
+      --accent: #7b61ff;
+      --border: rgba(255, 255, 255, 0.08);
+      --card-bg: rgba(30, 30, 50, 0.6);
+      --hover-bg: rgba(50, 50, 80, 0.6);
+      --secondary: #9ba1b1;
+      --shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      color: var(--text);
+      transition: background 0.6s ease, color 0.4s ease;
+      line-height: 1.6;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: var(--shadow);
+    }
+
+    [data-theme="dark"] header {
+      background: rgba(20, 20, 30, 0.5);
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #6a00ff, #00e1ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .toggle {
+      background: linear-gradient(90deg, #4c00ff, #00b7ff);
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 0.9rem;
+      cursor: pointer;
+      font-weight: 500;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(123, 47, 255, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 183, 255, 0.8);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      justify-content: center;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #6a00ff, #00e1ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .link-card,
+    .skill-card,
+    .experience-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover,
+    .skill-card:hover,
+    .experience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(123, 47, 255, 0.4);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .experience-section {
+      text-align: center;
+    }
+
+    .experience-card h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-card p {
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--secondary);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+    }
+
+    footer .quote {
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body data-theme="light">
+  <header>
+    <h1>🗣 Anish Kushwaha ⚡</h1>
+    <button class="toggle" id="themeToggle">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+    <div class="profile">
+      <div class="avatar">🗣</div>
+      <div class="bio">
+        <h2>Engineer • Student • Cosmologist • Ethical Hacker • Penetration Tester</h2>
+        <p>📍 Nai Bazar, Buxar, Bihar, India | Phone no. : +91 6287356552</p>
+      </div>
+    </div>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>
+        Hey there, I’m <strong>Anish Kushwaha</strong> — a mind constantly oscillating between science and philosophy, logic and intuition, reality and imagination.  
+        A visionary blending engineering, cybersecurity, and cosmology to understand the hidden architecture of the universe and technology.
+      </p>
+      
+      <p>
+        As a <strong>Penetration Tester</strong> and <strong>Ethical Hacker</strong>, I explore vulnerabilities not to destroy, but to protect.  
+        I’ve built scanners, automations, and tools inspired by Nmap and Metasploit, combining precision with innovation.
+      </p>
+      
+      <p>
+        My curiosity extends into <strong>quantum cosmology</strong> — exploring consciousness, physics, and the mind’s influence on reality.  
+        My ultimate goal: to merge artificial intelligence with human intuition, shaping the next evolution of intelligence itself.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>🔒 Cybersecurity</h3>
+          <p>Penetration Testing, Ethical Hacking, Vulnerability Analysis, Exploit Development.</p>
+        </div>
+        <div class="skill-card">
+          <h3>🧠 AI & Automation</h3>
+          <p>Python Scripting, Java Developer, Network Automation, Data Intelligence</p>
+        </div>
+        <div class="skill-card">
+          <h3>⚙️ Engineering</h3>
+          <p>System Design, Robotics, Software Architecture</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-section">
+      <h2>💼 Work Experience</h2>
+
+      <div class="experience-card">
+        <h3>CodSoft — Intern (Cybersecurity & Development)</h3>
+        <p><strong>Duration:</strong> June 2024 – August 2024</p>
+        <p>
+          Worked on live cybersecurity and automation projects, focusing on vulnerability scanning, exploit analysis, 
+          and tool development for ethical hacking. Improved workflow efficiency through Python-based automation and 
+          contributed to secure software development.
+        </p>
+      </div>
+
+      <div class="experience-card">
+        <h3>Internshala Student Partner (ISP) — Campus Ambassador</h3>
+        <p><strong>Duration:</strong> February 2024 – April 2024</p>
+        <p>
+          Promoted career growth programs and internships, represented Internshala among peers, 
+          and organized skill-enhancing workshops to inspire student upskilling and awareness.
+        </p>
+      </div>
+    </section>
+
+    <section class="links">
+      <h2>Connect with Me</h2>
+      <a href="https://Anish-kushwaha.b12sites.com" target="_blank" class="link-card">🌐 Official Website</a>
+      <a href="https://www.linkedin.com/in/anish-kushwaha-43a915383" target="_blank" class="link-card">💼 LinkedIn</a>
+      <a href="https://github.com/Anish-Kushwaha" target="_blank" class="link-card">💻 GitHub</a>
+      <a href="https://leetcode.com/u/Anish-Kushwaha" target="_blank" class="link-card">🧩 LeetCode</a>
+      <a href="https://hackerrank.com/profile/Anish_Kushwaha" target="_blank" class="link-card">🏆 HackerRank</a>
+      <a href="https://X.com/Anish_Kushwaha_" target="_blank" class="link-card">🐦 X (Twitter)</a>
+      <a href="https://facebook.com/Anishkushwahaji" target="_blank" class="link-card">📘 Facebook</a>
+      <a href="https://youtube.com/@cosmologist_anish" target="_blank" class="link-card">📺 YouTube</a>
+      <a href="https://www.google.com/maps/place/Anish+the+great,+Nai+Bazar,+Buxar,+Bihar+802101/" target="_blank" class="link-card">📍 Address Map</a>
+    </section>
+  </main>
+
+  <footer>
+    <p class="quote">“I don’t follow the universe — I reprogram it.”</p>
+    <p>© 2025 Anish Kushwaha.</p>
+    <p>⚚Ⓐ⚚</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+      body.dataset.theme = savedTheme;
+      toggleBtn.textContent = savedTheme === 'dark' ? '☀ Light Mode' : '🌙 Dark Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = body.dataset.theme;
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.dataset.theme = newTheme;
+      localStorage.setItem('theme', newTheme);
+      toggleBtn.textContent = newTheme === 'dark' ? '☀ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>
