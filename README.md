@@ -13,8 +13,7 @@ I’m a **Penetration Tester, engineer, student, cosmologist, hacker, and cybers
 
 - 🔭 I’m currently working on **Penetration Testing, Cybersecurity Projects, and Network Security tools**.  
 - 🌱 I’m learning advanced **Python, Metasploit, and ethical hacking techniques**.  
-- 🎯 Goal: Build tools for **automated vulnerability scanning and network security analysis**.  
-- ⚡ Fun fact: I can **control my sweating consciously**, like a biofeedback master!  
+- 🎯 Goal: Build tools for **automated vulnerability scanning and network security analysis**.
 
 ---
 
