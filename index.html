@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=1200" />
-  <meta name="description" content="Official Portfolio of 𝔸ℕ𝕀𝕊ℍ - 𝕂𝕌𝕊ℍ𝕎𝔸ℍ𝔸 — Engineer, Student, Cosmologist, Ethical Hacker, PenTester, Creator of Future Realities.">
+  <meta name="description" content="Official Portfolio of 𝔸ℕ𝕀𝕊ℍ - 𝕂𝕌𝕊ℍ𝕎𝔸ℍ𝔸 — Engineer, Student, Cosmologist, PenTester, Creator of Future Realities.">
   <title>𝔸ℕ𝕀𝕊ℍ - 𝕂𝕌𝕊ℍ𝕎𝔸ℍ𝔸</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -195,7 +195,31 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== MOBILE ===== */
+/* ===== EMAIL CONTACT SECTION ===== */
+.email-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.email-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  word-break: break-all;
+}
+
+.email-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+}
   </style>
 </head>
 
@@ -213,6 +237,7 @@ footer {
     <h2>Engineer • Student • Cosmologist • Ethical Hacker • Penetration Tester</h2>
     <p>📍 Nai Bazar, Buxar, Bihar, India</p>
     <p>📞 +91 6287356552</p>
+    <p>📧 Anish_Kushwaha@proton.me</p>
   </div>
     </div>
 
@@ -314,7 +339,28 @@ footer {
     </section>
   </main>
 
-  <footer>
+  <section class="emails">
+  <h2>📧 Emails For Contact</h2>
+
+  <div class="email-grid">
+    <div class="email-card">Anish_Kushwaha@proton.me</div>
+    <div class="email-card">Anish_Kushwaha_G@proton.me</div>
+    <div class="email-card">Anish_Kushwaha_ji@proton.me</div>
+
+    <div class="email-card">Anish.Kushwaha@myyahoo.com</div>
+    <div class="email-card">Anish_Kushwaha_ji@yahoo.com</div>
+
+    <div class="email-card">Anish-Kushwaha@zohomail.in</div>
+
+    <div class="email-card">Anish_Kushwaha@outlook.in</div>
+    <div class="email-card">Anish_Kushwaha_ji@outlook.com</div>
+
+    <div class="email-card">Anishkushwahag2@gmail.com</div>
+    <div class="email-card">Anishkushwahag28@gmail.com</div>
+  </div>
+  </section>
+  
+    <foot>
     <p class="quote">“I don’t follow the universe — I reprogram it.”</p>
     <p> © 2025 Anish Kushwaha. All rights reserved.</p>
     <p>⚚Ⓐ⚚</p>
