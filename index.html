@@ -209,6 +209,34 @@
         flex-direction: column;
         gap: 0.8rem;
       }
+      .profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 25px rgba(123, 47, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 183, 255, 0.8);
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
     }
   </style>
 </head>
@@ -221,11 +249,13 @@
 
   <main>
     <div class="profile">
-      <div class="avatar">🗣</div>
-      <div class="bio">
-        <h2>Engineer • Student • Cosmologist • Ethical Hacker • Penetration Tester</h2>
-        <p>📍 Nai Bazar, Buxar, Bihar, India | Phone no. : +91 6287356552</p>
-      </div>
+  <img src="Avatar.png" alt="Anish Kushwaha" class="profile-photo">
+
+  <div class="bio">
+    <h2>Engineer • Student • Cosmologist • Ethical Hacker • Penetration Tester</h2>
+    <p>📍 Nai Bazar, Buxar, Bihar, India</p>
+    <p>📞 +91 6287356552</p>
+  </div>
     </div>
 
     <section class="about">
