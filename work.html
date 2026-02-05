@@ -705,6 +705,35 @@
             opacity: 0.7;
         }
 
+        .certificate-item {
+    background: rgba(0, 10, 30, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 207, 255, 0.2);
+    transition: all 0.4s;
+    height: 200px;
+    position: relative;
+}
+
+.certificate-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 15px 30px rgba(0, 207, 255, 0.2);
+}
+
+.certificate-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 10, 30, 0.9);
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
         /* Cosmological Research Section */
         .research-section {
             margin-top: 120px;
@@ -1300,27 +1329,22 @@
                         <span class="tech-tag">Penetration Testing</span>
                     </div>
                     
-                    <!-- Certificate Gallery for CodSoft -->
-                    <div class="certificate-gallery">
-                        <h3 class="gallery-title"><i class="fas fa-certificate"></i> Certificates & Achievements</h3>
-                        <div class="certificate-images">
-                            <div class="certificate-item">
-                                <div class="certificate-placeholder">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <div class="certificate-label">CodSoft Internship Certificate</div>
-                                <div class="upload-hint">Upload certificate image</div>
-                            </div>
-                            <div class="certificate-item">
-                                <div class="certificate-placeholder">
-                                    <i class="fas fa-file-certificate"></i>
-                                </div>
-                                <div class="certificate-label">Cybersecurity Training Certificate</div>
-                                <div class="upload-hint">Upload certificate image</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- CodSoft Certificate Gallery -->
+<div class="certificate-gallery">
+    <h3 class="gallery-title"><i class="fas fa-certificate"></i> Certificates & Achievements</h3>
+    <div class="certificate-images">
+        <div class="certificate-item">
+            <img src="codsoft-internship.jpg" alt="CodSoft Internship Certificate" 
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+            <div class="certificate-label">CodSoft Internship Certificate</div>
+        </div>
+        <div class="certificate-item">
+            <img src="codsoft-cybersecurity.jpg" alt="CodSoft Cybersecurity Certificate"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+            <div class="certificate-label">Cybersecurity Training Certificate</div>
+        </div>
+    </div>
+</div>
 
                 <!-- Internshala Experience -->
                 <div class="work-card">
@@ -1360,27 +1384,22 @@
                         <span class="tech-tag">Career Development</span>
                     </div>
                     
-                    <!-- Certificate Gallery for Internshala -->
-                    <div class="certificate-gallery">
-                        <h3 class="gallery-title"><i class="fas fa-certificate"></i> Certificates & Achievements</h3>
-                        <div class="certificate-images">
-                            <div class="certificate-item">
-                                <div class="certificate-placeholder">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <div class="certificate-label">Internshala Student Partner Certificate</div>
-                                <div class="upload-hint">Upload certificate image</div>
-                            </div>
-                            <div class="certificate-item">
-                                <div class="certificate-placeholder">
-                                    <i class="fas fa-file-certificate"></i>
-                                </div>
-                                <div class="certificate-label">Leadership & Outreach Certificate</div>
-                                <div class="upload-hint">Upload certificate image</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- Internshala Certificate Gallery -->
+<div class="certificate-gallery">
+    <h3 class="gallery-title"><i class="fas fa-certificate"></i> Certificates & Achievements</h3>
+    <div class="certificate-images">
+        <div class="certificate-item">
+            <img src="internshala-student-partner.jpg" alt="Internshala Student Partner Certificate"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+            <div class="certificate-label">Internshala Student Partner Certificate</div>
+        </div>
+        <div class="certificate-item">
+            <img src="internshala-leadership.jpg" alt="Internshala Leadership Certificate"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+            <div class="certificate-label">Leadership & Outreach Certificate</div>
+        </div>
+    </div>
+</div>
 
                 <!-- JP Morgan Chase Experience -->
                 <div class="work-card">
@@ -1428,19 +1447,17 @@
                         </div>
                     </div>
                     
-                    <!-- Certificate Gallery for JP Morgan -->
-                    <div class="certificate-gallery">
-                        <h3 class="gallery-title"><i class="fas fa-certificate"></i> Certificate</h3>
-                        <div class="certificate-images">
-                            <div class="certificate-item">
-                                <div class="certificate-placeholder">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <div class="certificate-label">JPMorgan Chase Software Engineering Simulation Certificate</div>
-                                <div class="upload-hint">Upload certificate image</div>
-                            </div>
-                        </div>
-                    </div>
+<!-- JP Morgan Certificate Gallery -->
+<div class="certificate-gallery">
+    <h3 class="gallery-title"><i class="fas fa-certificate"></i> Certificate</h3>
+    <div class="certificate-images">
+        <div class="certificate-item">
+            <img src="jpmorgan-software-engineering.jpg" alt="JPMorgan Chase Software Engineering Certificate"
+                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+            <div class="certificate-label">JPMorgan Chase Software Engineering Simulation Certificate</div>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </section>
@@ -1708,6 +1725,32 @@
                 });
             }
         });
+
+        // Add this to your existing script section
+document.addEventListener("DOMContentLoaded", function() {
+    const certificateImages = document.querySelectorAll('.certificate-item img');
+    
+    certificateImages.forEach(img => {
+        img.addEventListener('error', function() {
+            // If image fails to load, show a placeholder
+            this.style.display = 'none';
+            const parent = this.parentElement;
+            const placeholder = document.createElement('div');
+            placeholder.className = 'certificate-placeholder';
+            placeholder.innerHTML = '<i class="fas fa-image"></i>';
+            placeholder.style.cssText = `
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                color: rgba(0, 207, 255, 0.3);
+            `;
+            parent.insertBefore(placeholder, this);
+        });
+    });
+});
 
         // Handle window resize for all background elements
         let resizeTimeout;
