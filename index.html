@@ -801,6 +801,106 @@
             margin-top: 50px;
         }
 
+        .hero-company-strip {
+            margin-top: 30px;
+            padding: 18px 20px;
+            border: 1px solid rgba(0, 207, 255, 0.35);
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(0, 20, 50, 0.65), rgba(0, 8, 20, 0.6));
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 207, 255, 0.08), 0 0 18px rgba(0, 207, 255, 0.15);
+        }
+
+        .hero-company-strip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.15), transparent);
+            animation: stripScan 4.5s linear infinite;
+        }
+
+        @keyframes stripScan {
+            0% { left: -120%; }
+            100% { left: 120%; }
+        }
+
+        .company-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: var(--primary-blue);
+        }
+
+        .company-link {
+            color: var(--neon-blue);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(0, 247, 255, 0.45);
+            transition: all 0.3s ease;
+        }
+
+        .company-link:hover {
+            color: #fff;
+            border-bottom-color: var(--neon-blue);
+            text-shadow: 0 0 12px rgba(0, 247, 255, 0.8);
+        }
+
+        .hero-company-text {
+            margin-top: 10px;
+            color: rgba(230, 247, 255, 0.9);
+            font-size: 1.02rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .stat-chip {
+            background: rgba(0, 18, 45, 0.7);
+            border: 1px solid rgba(0, 207, 255, 0.22);
+            border-radius: 10px;
+            padding: 14px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-chip::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: inset 0 0 18px rgba(0, 247, 255, 0.08);
+            pointer-events: none;
+        }
+
+        .stat-value {
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-label {
+            display: block;
+            margin-top: 5px;
+            color: rgba(230, 247, 255, 0.75);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .btn {
             padding: 18px 35px;
             font-family: 'Orbitron', sans-serif;
@@ -1354,6 +1454,10 @@
             .hero-description {
                 font-size: 1.2rem;
             }
+
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
             
             .info-cards, .personal-sections {
                 grid-template-columns: repeat(2, 1fr);
@@ -1409,6 +1513,14 @@
             
             .hero-description {
                 font-size: 1.1rem;
+            }
+
+            .hero-company-strip {
+                text-align: left;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
             }
             
             .btn {
@@ -1485,6 +1597,10 @@
             
             .hero-description {
                 font-size: 1rem;
+            }
+
+            .hero-company-strip {
+                padding: 16px;
             }
             
             .cta-buttons {
@@ -1658,7 +1774,7 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">Hello, Everyone<span>I'm glad to see you hear</span></h1>
+                <h1 class="hero-title">Anish Kushwaha<span>Founder & CEO — ANISH ENTERPRISES</span></h1>
                 
                 <div class="typing-container">
                     <span id="typed-text" class="typing-text"></span>
@@ -1666,18 +1782,43 @@
                 </div>
                 
                 <p class="hero-description">
-                    A passionate <span class="highlight">Full-Stack Developer & Open Source Contributor</span> with expertise in building innovative digital solutions. 
-                    Currently pursuing my education while developing cutting-edge applications. With a strong foundation in 
-                    <span class="highlight">MERN Stack, Python, and Cloud Technologies</span>, I create applications that are both functional and futuristic.
-                    My work spans across <span class="highlight">web development, UI/UX design, and emerging technologies</span>.
+                    I am <span class="highlight">Anish Kushwaha</span> — Software Developer, Cybersecurity Builder, and Founder & CEO of
+                    <span class="highlight">ANISH ENTERPRISES</span>. I design secure systems, build automation workflows, and create high-performance web platforms
+                    using <span class="highlight">MERN, Python, cloud tooling, and practical offensive-defense security experience</span>.
+                    This developer site showcases my ventures, project engineering, achievements, and digital products.
                 </p>
+
+                <div class="hero-company-strip">
+                    <span class="company-pill"><i class="fas fa-shield-alt"></i> Official Company</span>
+                    <p class="hero-company-text">
+                        Visit
+                        <a class="company-link" href="https://anishkushwaha.co.in" target="_blank" rel="noopener noreferrer">
+                            ANISH ENTERPRISES (AnishKushwaha.co.in)
+                        </a>
+                        for cybersecurity, development, and automation solutions.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-chip">
+                            <span class="stat-value">Founder & CEO</span>
+                            <span class="stat-label">Leadership</span>
+                        </div>
+                        <div class="stat-chip">
+                            <span class="stat-value">Buxar, Bihar, India</span>
+                            <span class="stat-label">Base Location</span>
+                        </div>
+                        <div class="stat-chip">
+                            <span class="stat-value">Secure • Automate • Innovate</span>
+                            <span class="stat-label">Core Motto</span>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> Explore My Work
+                    <a href="https://anishkushwaha.co.in" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fas fa-building"></i> Visit ANISH ENTERPRISES
                     </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Download Resume
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Work With Me
                     </a>
                 </div>
             </div>
@@ -1690,10 +1831,10 @@
                 <div class="card-icon">
                     <i class="fas fa-code"></i>
                 </div>
-                <h3 class="card-title">Development Expertise</h3>
+                <h3 class="card-title">Developer Site Highlights</h3>
                 <p class="card-content">
-                    Proficient in <span class="highlight">JavaScript, React, Node.js, Python, and MongoDB</span>. Experienced in building responsive web applications, 
-                    RESTful APIs, and real-time systems. Contributor to various open-source projects with focus on clean code and best practices.
+                    Explore my complete ecosystem: <span class="highlight">projects, ventures, achievements, certifications, and contact channels</span>.
+                    This portfolio is the central profile for my work in software engineering, secure architecture, and innovation-led product building.
                 </p>
             </div>
             
@@ -1701,10 +1842,10 @@
                 <div class="card-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h3 class="card-title">Innovation & Projects</h3>
+                <h3 class="card-title">ANISH ENTERPRISES Focus</h3>
                 <p class="card-content">
-                    Created <span class="highlight">30+ web experiences</span> including interactive portfolios, e-commerce platforms, and educational tools. 
-                    My project "UAVIX DESIGN" showcases futuristic interaction design principles. Passionate about solving real-world problems through technology.
+                    At <span class="highlight">ANISH ENTERPRISES</span>, I lead innovation in cybersecurity tools, automation pipelines,
+                    custom software systems, and reliable digital infrastructure engineered for practical real-world deployment.
                 </p>
             </div>
             
@@ -1712,10 +1853,10 @@
                 <div class="card-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <h3 class="card-title">Education & Learning</h3>
+                <h3 class="card-title">Professional Identity</h3>
                 <p class="card-content">
-                    Continuously expanding knowledge in <span class="highlight">emerging technologies, cloud computing, and UI/UX design</span>. 
-                    Active participant in tech communities and hackathons. Committed to lifelong learning and staying updated with industry trends.
+                    <span class="highlight">Founder & CEO | Developer | Cybersecurity Practitioner</span> based in Buxar, Bihar, India.
+                    I continuously build, test, and improve scalable systems with a security-first engineering mindset.
                 </p>
             </div>
         </section>
@@ -1983,13 +2124,13 @@
         // Typing Animation
         const typedTextSpan = document.getElementById("typed-text");
         const textArray = [
+            "Founder & CEO - ANISH ENTERPRISES",
             "Full-Stack Developer",
+            "Cybersecurity Builder",
+            "Automation Architect",
             "Open Source Contributor", 
-            "UI/UX Designer",
-            "Problem Solver",
-            "Tech Enthusiast",
-            "Innovator",
-            "MERN Stack Developer"
+            "MERN + Python Engineer",
+            "Innovation Driven Technologist"
         ];
         const typingDelay = 100;
         const erasingDelay = 50;
